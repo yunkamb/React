@@ -1,12 +1,9 @@
-const Main = (props) => {
-
-    console.log(props)
+const Main = ({greeting, picture}) => {
 
     return (
         <main className="container">
-            <h2>Hola {props.nombre} {props.apellido}</h2>
-            <p>Tengo {props.edad} años</p>
-            <p>{props.usuarios}</p>
+            <h1>{greeting}</h1>
+            <p><img src={picture} alt="picture" /></p>
         </main>
     );
 }

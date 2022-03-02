@@ -1,4 +1,4 @@
-function Footer() { 
+function Footer() {
     return (
         <footer id="mainFooter">
             <h2>Footer</h2>

@@ -3,16 +3,13 @@ import Main from "./Main"
 import Footer from "./Footer"
 
 function App() {
-    
-    const usuarios = ["Yunka", "Chocobar"]
+
     return (
         <>
             <Header />
             <Main
-                nombre="Yunka"
-                apellido="Chocobar"
-                edad={26}
-                usuarios={usuarios}
+                greeting="Bienvenidos a MercadoPobre"
+                picture="https://i.imgflip.com/6745lw.jpg"
             />
             <Footer />
         </>
