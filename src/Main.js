@@ -1,9 +1,14 @@
-const Main = ({greeting, picture}) => {
+import ItemListContainer from "./components/ItemListContainer"
+import ItemCount from "./components/ItemCount"
+
+const Main = () => {
 
     return (
         <main className="container">
-            <h1>{greeting}</h1>
-            <p><img src={picture} alt="picture" /></p>
+            <ItemListContainer
+                greeting="Bienvenidos a MercadoPobre"
+                picture="https://i.imgflip.com/6745lw.jpg"
+            />
         </main>
     );
 }

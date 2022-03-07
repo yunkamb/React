@@ -7,10 +7,7 @@ function App() {
     return (
         <>
             <Header />
-            <Main
-                greeting="Bienvenidos a MercadoPobre"
-                picture="https://i.imgflip.com/6745lw.jpg"
-            />
+            <Main />
             <Footer />
         </>
     )

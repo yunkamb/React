@@ -26,3 +26,23 @@
 h1 {
     margin-top: 1rem;
 }
+
+.itemContainer img {
+    width: 300px;
+}
+
+.itemBtn {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    width: max-content;
+    margin: 1rem auto;
+}
+
+.itemBtn p {
+    font-size: 2rem;
+}
+
+.itemBtn button {
+    height: 2rem;
+}
