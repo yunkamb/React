@@ -49,9 +49,16 @@ h1 {
 
 .itemList {
     display: flex;
-    font-size: 2rem;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    margin: 1rem auto;
 }
 
 .itemList img {
     height: 300px;
+}
+
+.btnProductos {
+    margin-block: 1rem;
+    font-size: 1rem;
 }
