@@ -1,4 +1,4 @@
-const ITEMS = [
+export const ITEMS = [
     {
         id: 1,
         name: "Pava Electrica",
@@ -18,5 +18,3 @@ const ITEMS = [
         img: "https://http2.mlstatic.com/D_NQ_NP_881651-MLA43579033796_092020-O.webp",
     },
 ]
-
-export default ITEMS

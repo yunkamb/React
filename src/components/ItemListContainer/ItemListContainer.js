@@ -3,16 +3,6 @@ import ItemList from "../ItemList/ItemList"
 
 const ItemListContainer = ({ greeting, picture }) => {
 
-    const promesa = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("hola");
-        }, 2000)
-
-    })
-    promesa.then((param) => {
-        console.log(param)
-    })
-
     return (
         <div className="itemContainer">
             <h1>{greeting}</h1>
@@ -22,6 +12,7 @@ const ItemListContainer = ({ greeting, picture }) => {
                 initial={5}
                 onAdd={contador => console.log(`Agregados ${contador} productos`)}
             />
+            <ItemList />
         </div>
     );
 }
