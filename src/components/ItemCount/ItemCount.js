@@ -14,7 +14,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
     const confirmar = () => {
         if (contador > 0 && contador <= stock) {
-            console.log(onAdd)
+            onAdd(contador)
         }
     }
 

@@ -20,7 +20,7 @@ const ItemListContainer = ({ greeting, picture }) => {
             <ItemCount
                 stock={10}
                 initial={5}
-                onAdd={"Agregados tus productos al carrito"}
+                onAdd={contador => console.log(`Agregados ${contador} productos`)}
             />
         </div>
     );

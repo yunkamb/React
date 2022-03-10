@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Item from "../Item/Item"
+import {ITEMS} from "../Item/Item"
 
 const ItemList = ({ items }) => {
 
