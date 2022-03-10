@@ -46,3 +46,12 @@ h1 {
 .itemBtn button {
     height: 2rem;
 }
+
+.itemList {
+    display: flex;
+    font-size: 2rem;
+}
+
+.itemList img {
+    height: 300px;
+}

@@ -1,16 +1,21 @@
-import { useState } from "react"
+import React, { useState } from "react"
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
     const [contador, setContador] = useState(initial)
     const incrementar = () => {
-        setContador(contador + 1)
+        if (contador < stock) {
+            setContador(contador + 1)
+        }
     }
     const disminuir = () => {
-        if (contador > 1) { 
-            setContador(contador - 1) }
+        if (contador > 1) {
+            setContador(contador - 1)
+        }
     }
     const confirmar = () => {
-        contador <= stock ? console.log(`Confirmados ${contador} productos`) : console.log(`No hay suficiente stock`)
+        if (contador > 0 && contador <= stock) {
+            console.log(onAdd)
+        }
     }
 
     return (
