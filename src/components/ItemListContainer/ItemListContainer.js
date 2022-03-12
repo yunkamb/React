@@ -1,12 +1,11 @@
 import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "../ItemList/ItemList"
 
-const ItemListContainer = ({ greeting, picture }) => {
+const ItemListContainer = ({ greeting}) => {
 
     return (
         <div className="itemContainer">
             <h1>{greeting}</h1>
-            <p><img src={picture} alt="picture" /></p>
             <ItemCount
                 stock={10}
                 initial={5}

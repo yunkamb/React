@@ -19,6 +19,10 @@
     margin: 1rem;
 }
 
+.navBar img{
+    max-height: 3rem;
+}
+
 .container {
     text-align: center;
 }
@@ -48,17 +52,33 @@ h1 {
 }
 
 .itemList {
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    font-size: 1rem;
     margin: 1rem auto;
-}
-
-.itemList img {
-    height: 300px;
 }
 
 .btnProductos {
     margin-block: 1rem;
     font-size: 1rem;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+}
+
+.itemDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-left: 5%;
+}
+
+.itemDetails p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.5rem;
 }

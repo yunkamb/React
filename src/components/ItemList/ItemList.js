@@ -14,11 +14,13 @@ const ItemList = () => {
             }, 2000)
         })
 
-        promesa.then((param) => {
-            ReactDOM.render(param, document.querySelector(".mostrarProductos"))
-        }).catch((error) => {
-            console.log(`Error!: ${error}`)
-        })
+        promesa
+            .then((param) => {
+                ReactDOM.render(param, document.querySelector(".mostrarProductos"))
+            })
+            .catch((error) => {
+                console.log(`Error!: ${error}`)
+            })
     }
 
     return (
