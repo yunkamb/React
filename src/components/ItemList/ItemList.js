@@ -1,20 +1,16 @@
-import { Items } from "../Item/Item"
+import Item from "../Item/Item"
 
-const ItemList = () => {
-        return (
-            <div className="itemList">
-                {Items.map(item => {
-                    return (
-                        <div key={item.id}>
-                            <img src={item.img} alt="" />
-                            <h1>{item.name}</h1>
-                            <p>{item.price}</p>
-                        </div>
-                    )
-                })}
-            </div>
-        )
-    }
+const ItemList = ({ prop }) => {
+    return (
+        <div className="itemList">
+            {prop.map(item => {
+                return (
+                    <Item {...item} />
+                )
+            })}
+        </div>
+    )
+}
 
 
 export default ItemList

@@ -2,24 +2,24 @@ import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "../ItemList/ItemList"
 import ReactDOM from 'react-dom'
 import React, { useEffect, useState } from "react"
+import {Items} from "../mock/mock"
 
 const ItemListContainer = ({ greeting }) => {
-
-
-    useEffect(() => getItems, [])
+    const [products, setProducts] = useState([]
+        )
+    useEffect(() => getItems(), [])
 
     const getItems = () => {
         const promesa = new Promise((resolve, reject) => {
             setTimeout(() => {
-                const respuesta = <ItemList />
-                resolve(respuesta)
+                resolve(Items)
                 //reject("Error en la respuesta") 
             }, 2000)
         })
 
         promesa
             .then((param) => {
-                ReactDOM.render(param, document.querySelector(".mostrarProductos"))
+               setProducts(param)
             })
             .catch((error) => {
                 console.log(`Error!: ${error}`)
@@ -37,7 +37,7 @@ const ItemListContainer = ({ greeting }) => {
             />
             <div>
                 <button className="btnProductos" onClick={getItems}>Mostrar productos</button>
-                <div className="mostrarProductos"></div>
+                <div className="mostrarProductos"><ItemList prop={products}/></div>
             </div>
         </div>
     );
