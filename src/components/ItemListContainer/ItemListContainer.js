@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "../ItemList/ItemList"
 import ReactDOM from 'react-dom'
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 
 const ItemListContainer = ({ greeting }) => {
 
