@@ -25,19 +25,17 @@ const showDetails = () => {
             //reject("Error en la respuesta") 
         }, 2000)
     })
-
+    
     promesaDetalle
-        .then((param) => {
+    .then((param) => {
             ReactDOM.render(param, document.querySelector(".itemDetailContainer"))
         })
         .catch((error) => {
             console.log(`Error!: ${error}`)
         })
-}
-
-
-
-const ItemDetailContainer = () => {
+    }
+    
+    const ItemDetailContainer = () => {
     return (
         <div>
             <button onClick={showDetails}>Mostrar detalles</button>

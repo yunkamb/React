@@ -1,8 +1,4 @@
-import React, { useState } from "react"
-
-
-const Items = () => {
-    const [items, setItems] = useState([
+export const Items = [
         {
             id: 1,
             name: "Pava Electrica",
@@ -21,21 +17,4 @@ const Items = () => {
             price: "$15.000",
             img: "https://http2.mlstatic.com/D_NQ_NP_881651-MLA43579033796_092020-O.webp",
         },
-    ])
-
-    return (
-        <div className="itemList">
-            {items.map(item => {
-                return (
-                    <div key={item.id}>
-                        <img src={item.img} alt="" />
-                        <h1>{item.name}</h1>
-                        <p>{item.price}</p>
-                    </div>
-                )
-            })}
-        </div>
-    )
-}
-
-export default Items
+    ]

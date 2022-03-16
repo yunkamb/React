@@ -1,7 +1,31 @@
 import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "../ItemList/ItemList"
+import ReactDOM from 'react-dom'
+import { useEffect, useState } from "react"
 
-const ItemListContainer = ({ greeting}) => {
+const ItemListContainer = ({ greeting }) => {
+
+
+    useEffect(() => getItems, [])
+
+    const getItems = () => {
+        const promesa = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const respuesta = <ItemList />
+                resolve(respuesta)
+                //reject("Error en la respuesta") 
+            }, 2000)
+        })
+
+        promesa
+            .then((param) => {
+                ReactDOM.render(param, document.querySelector(".mostrarProductos"))
+            })
+            .catch((error) => {
+                console.log(`Error!: ${error}`)
+            })
+    }
+
 
     return (
         <div className="itemContainer">
@@ -11,7 +35,10 @@ const ItemListContainer = ({ greeting}) => {
                 initial={5}
                 onAdd={contador => console.log(`Agregados ${contador} productos`)}
             />
-            <ItemList />
+            <div>
+                <button className="btnProductos" onClick={getItems}>Mostrar productos</button>
+                <div className="mostrarProductos"></div>
+            </div>
         </div>
     );
 }
