@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from "react"
 import ReactDOM from 'react-dom'
-import detalles from "../ItemList/ItemDetail"
+import ItemDetail from "../ItemList/ItemDetail"
+import { Items } from "../mock/mock"
 
 
 const ItemDetailContainer = () => {
 
-    useEffect(() => showDetails, [])
+    const [details, setDetails] = useState([])
 
+    useEffect(() => showDetails, [])
+    
     const showDetails = () => {
         const promesaDetalle = new Promise((resolve, reject) => {
             setTimeout(() => {
-                const respuesta = detalles()
-                resolve(respuesta)
+                resolve(Items[0])
                 //reject("Error en la respuesta") 
             }, 2000)
         })
 
         promesaDetalle
             .then((param) => {
-                ReactDOM.render(param, document.querySelector(".itemDetailContainer"))
+                setDetails(param)
             })
             .catch((error) => {
                 console.log(`Error!: ${error}`)
@@ -29,7 +31,7 @@ const ItemDetailContainer = () => {
     return (
         <div>
             <button onClick={showDetails}>Mostrar detalles</button>
-            <div className="itemDetailContainer"></div>
+            <div className="itemDetailContainer"><ItemDetail prop={details}/></div>
         </div>
     )
 }

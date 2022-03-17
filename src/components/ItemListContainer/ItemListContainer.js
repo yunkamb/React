@@ -1,13 +1,13 @@
 import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "../ItemList/ItemList"
-import ReactDOM from 'react-dom'
 import React, { useEffect, useState } from "react"
-import {Items} from "../mock/mock"
+import { Items } from "../mock/mock"
 
 const ItemListContainer = ({ greeting }) => {
-    const [products, setProducts] = useState([]
-        )
-    useEffect(() => getItems(), [])
+
+    const [products, setProducts] = useState([])
+    
+    useEffect(() => getItems, [])
 
     const getItems = () => {
         const promesa = new Promise((resolve, reject) => {
@@ -19,7 +19,7 @@ const ItemListContainer = ({ greeting }) => {
 
         promesa
             .then((param) => {
-               setProducts(param)
+                setProducts(param)
             })
             .catch((error) => {
                 console.log(`Error!: ${error}`)
@@ -37,7 +37,7 @@ const ItemListContainer = ({ greeting }) => {
             />
             <div>
                 <button className="btnProductos" onClick={getItems}>Mostrar productos</button>
-                <div className="mostrarProductos"><ItemList prop={products}/></div>
+                <div className="mostrarProductos"><ItemList prop={products} /></div>
             </div>
         </div>
     );
