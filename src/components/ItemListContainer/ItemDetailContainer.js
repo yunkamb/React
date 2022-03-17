@@ -6,7 +6,7 @@ import { Items } from "../mock/mock"
 
 const ItemDetailContainer = () => {
 
-    const [details, setDetails] = useState([])
+    const [details, setDetails] = useState({})
 
     useEffect(() => showDetails, [])
     

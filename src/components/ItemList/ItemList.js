@@ -5,7 +5,7 @@ const ItemList = ({ prop }) => {
         <div className="itemList">
             {prop.map(item => {
                 return (
-                    <Item {...item} />
+                    <Item {...item}/>
                 )
             })}
         </div>

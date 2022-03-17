@@ -6,7 +6,7 @@ import { Items } from "../mock/mock"
 const ItemListContainer = ({ greeting }) => {
 
     const [products, setProducts] = useState([])
-    
+
     useEffect(() => getItems, [])
 
     const getItems = () => {

@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom"
+
 function NavBar({picture}) {
     return (
         <nav className="navBar">
-            <a href="">Inicio</a>
-            <a href="">Productos</a>
-            <a href="">Contacto</a>
-            <a href="">Nosotros</a>
-            <img src={picture} alt="cartWidget" />
+            <Link to="productos">Productos</Link>
+            <Link to="detalles">Detalles</Link>
+            <Link to="info">Info</Link>
+            <Link to="carrito">Carrito</Link>
+            <img src={picture} alt="Carrito" />
         </nav>
     )
 }
