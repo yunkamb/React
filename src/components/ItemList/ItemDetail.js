@@ -2,14 +2,13 @@ import React from "react"
 
 const ItemDetail = ({prop}) => {
     return (
-        <div className="item">
+        <div key={prop.id} className="item">
             <img src={prop.img} alt="" />
             <div className="itemDetails"> 
-                <h1>{prop.nombre}</h1>
-                <p>Precio: ${prop.precio}</p>
+            <h1>{prop.name}</h1>
+            <p>{prop.price}</p>
             </div>
         </div>
     )
 }
-
 export default ItemDetail
