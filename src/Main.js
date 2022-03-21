@@ -9,14 +9,12 @@ const Main = () => {
         <main className="container">
             <Routes>
                 <Route path="/" element={<ItemListContainer />} />
-                <Route path="/productos" element={<ItemListContainer />} />
-                <Route path="/detalles" element={<ItemDetailContainer />} />
-                <Route path="/carrito" element={<CartWidget/>}/>
+                <Route path="/category/:id" element={<ItemListContainer />} />
+                <Route path="/carrito" element={<CartWidget />} />
+                <Route path="/detalles/:id" element={<ItemDetailContainer />} />
             </Routes>
         </main>
     );
 }
-{/* <ItemListContainer greeting="Bienvenidos a MercadoPobre" />
-<ItemDetailContainer /> */}
 
 export default Main

@@ -1,37 +1,38 @@
 import React, { useEffect, useState } from "react"
-import ReactDOM from 'react-dom'
 import ItemDetail from "../ItemList/ItemDetail"
 import { Items } from "../mock/mock"
+import { useParams } from "react-router-dom"
 
 
 const ItemDetailContainer = () => {
 
-    const [details, setDetails] = useState({})
 
-    useEffect(() => showDetails, [])
-    
-    const showDetails = () => {
+    const [detail, setDetail] = useState({})
+    const [loading, setLoading] = useState(true)
+    const itemId = useParams()
+    useEffect(() => showDetail(), [])
+
+    const showDetail = () => {
         const promesaDetalle = new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(Items[0])
-                //reject("Error en la respuesta") 
+                resolve(Items[itemId.id - 1])
             }, 2000)
         })
 
         promesaDetalle
             .then((param) => {
-                setDetails(param)
+                setDetail(param)
             })
-            .catch((error) => {
-                console.log(`Error!: ${error}`)
+            .finally(() => {
+                setLoading(false)
             })
     }
 
 
     return (
         <div>
-            <button onClick={showDetails}>Mostrar detalles</button>
-            <div className="itemDetailContainer"><ItemDetail prop={details}/></div>
+            <p>{loading ? "Cargando ..." : "Ya tenes los productos"}</p>
+            <div className="itemDetailContainer"><ItemDetail prop={detail} /></div>
         </div>
     )
 }
