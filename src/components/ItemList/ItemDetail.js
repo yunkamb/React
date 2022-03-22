@@ -15,7 +15,7 @@ const ItemDetail = ({ prop }) => {
                 </div>
             </div>
             <ItemCount initial={1} onAdd={contador => setTotal(`Agregados ${contador} productos al carrito`)} />
-            <p>{total}</p>
+            <p className="carritoTotal">{total}</p>
         </div>
     )
 }
