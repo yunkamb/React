@@ -1,29 +1,27 @@
 import React, { useState } from "react"
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ initial, onAdd }) => {
     const [contador, setContador] = useState(initial)
     const incrementar = () => {
-        if (contador < stock) {
             setContador(contador + 1)
-        }
     }
     const disminuir = () => {
-        if (contador > 1) {
+        if (contador > initial) {
             setContador(contador - 1)
         }
     }
     const confirmar = () => {
-        if (contador > 0 && contador <= stock) {
+        if (contador > 0) {
             onAdd(contador)
         }
     }
 
     return (
         <div className="itemBtn">
-            <p>{contador}</p>
             <button onClick={disminuir}>Disminuir</button>
             <button onClick={incrementar}>Incrementar</button>
-            <button onClick={confirmar}>Confirmar</button>
+            <button onClick={confirmar}>Agregar productos</button>
+            <p>{contador}</p>
         </div>
     )
 }

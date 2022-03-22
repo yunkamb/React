@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ItemDetail from "../ItemList/ItemDetail"
+import ItemCount from "../ItemCount/ItemCount"
 import { Items } from "../mock/mock"
 import { useParams } from "react-router-dom"
 
@@ -8,6 +9,7 @@ const ItemDetailContainer = () => {
 
 
     const [detail, setDetail] = useState({})
+    const [count, setCount] = useState({})
     const [loading, setLoading] = useState(true)
     const itemId = useParams()
     useEffect(() => showDetail(), [])
@@ -32,7 +34,9 @@ const ItemDetailContainer = () => {
     return (
         <div>
             <p>{loading ? "Cargando ..." : "Ya tenes los productos"}</p>
-            <div className="itemDetailContainer"><ItemDetail prop={detail} /></div>
+            <div className="itemDetailContainer">
+                <ItemDetail prop={detail} />
+            </div>
         </div>
     )
 }

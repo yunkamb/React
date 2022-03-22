@@ -5,7 +5,7 @@ import { Items } from "../mock/mock"
 import { useParams } from "react-router-dom"
 
 const ItemListContainer = ({ greeting }) => {
-
+    
     return (
         <div className="itemContainer">
             <h1>{greeting}</h1>
