@@ -1,7 +1,7 @@
 export const Items = [
     {
         id: 1,
-        name: "Pava Electrica Jarra Acero Inoxidable Mate Cafe 2 Litros",
+        name: "Pava Eléctrica Jarra Acero Inoxidable Mate Café 2 Litros",
         price: "$1.921",
         img: "https://http2.mlstatic.com/D_NQ_NP_815052-MLA41537440658_042020-O.webp",
         category: "Electrodomésticos"
