@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from "react"
 import ItemDetail from "../ItemList/ItemDetail"
-import ItemCount from "../ItemCount/ItemCount"
 import { Items } from "../mock/mock"
 import { useParams } from "react-router-dom"
 
 
 const ItemDetailContainer = () => {
 
-
     const [detail, setDetail] = useState({})
-    const [count, setCount] = useState({})
     const [loading, setLoading] = useState(true)
     const itemId = useParams()
     useEffect(() => showDetail(), [])
 
     const showDetail = () => {
         const promesaDetalle = new Promise((resolve, reject) => {
-            setTimeout(() => {
                 resolve(Items[itemId.id - 1])
-            }, 2000)
         })
 
         promesaDetalle
