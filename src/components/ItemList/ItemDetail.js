@@ -18,7 +18,7 @@ const ItemDetail = ({ prop }) => {
     }
 
     const handleClick = () => {
-        agregarProducto(prop.name, seleccionado, prop.id)
+        agregarProducto(prop.name, seleccionado, prop.id, prop.img)
     }
 
     return (

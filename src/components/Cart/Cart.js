@@ -8,10 +8,18 @@ const Carrito = () => {
     return (
         <>
             <h2>Carrito</h2>
-            <div>
-            {carrito.map((carro) => {
-                return <p key={carro.id}>Agregaste {carro.cantidad} {carro.item} al carrito.</p>
-            })}
+            <div className="carritoItemContainer">
+                {carrito.map((carro) => {
+                    return (
+                        <div className="carritoItem" key={carro.id}>
+                            <div >
+                                <img src={carro.img} alt="" />
+                                <p >Agregaste {carro.cantidad} {carro.item} al carrito.</p>
+                                <button onClick={()=> borrarProducto(carro.item)}>Eliminar</button>
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
             <button onClick={clearProducto}>Vaciar carrito</button>
         </>
